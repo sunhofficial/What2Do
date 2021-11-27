@@ -17,6 +17,12 @@ mongoose
   .connect("mongodb://localhost/")
   .then(() => console.log("connection successful"))
   .catch((err) => console.error(err));
+  /*
+  .on('disconnected', function(){
+    console.log("연결이 끊어졌습니다. 5초 후 다시 연결합니다.");
+    setInterval(connectDB, 5000);
+  });
+  */
 
 const configureSession = require("./config/session");
 configureSession(app);
