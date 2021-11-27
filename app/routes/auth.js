@@ -1,5 +1,6 @@
 const express = require("express");
 const passport = require("passport");
+const cookieParser = require("cookie-parser");
 const router = express.Router();
 const passportnaver = require("../config/naverlogin");
 const passportkakao = require("../config/kakaologin");
@@ -37,10 +38,10 @@ router.get(
 router.get("/logout", (req, res) => {
   console.log("logoutsession", req.session.islogined);
   if (req.session.islogined) {
+    req.logout();
     req.session.destroy((err) => {
       //세션제거
       if (err) throw err;
-      console.log(req.session);
       res.redirect("/");
     });
   } else {
