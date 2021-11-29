@@ -17,4 +17,9 @@ router.get("/", (req, res) => {
 router.get("/map", (req, res) => {
   res.render("map");
 });
+
+router.get("/signup", (req, res) => {
+  res.render("signup.ejs");
+})
+
 module.exports = router;
