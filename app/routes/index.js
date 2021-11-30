@@ -19,7 +19,7 @@ router.get("/map", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-  res.render("signup.ejs");
-})
+  res.render("signup");
+});
 
 module.exports = router;
