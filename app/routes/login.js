@@ -1,22 +1,22 @@
 // Express 기본 모듈 사용하기
 var express = require('express')
-var http = require('http')
-var path = require('path');
+// var http = require('http')
+// var path = require('path');
 // Express의 미들웨어 불러오기
 var bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
-var static = require('serve-static')
-var errorHandler = require('errorhandler');
+// var static = require('serve-static')
+// var errorHandler = require('errorhandler');
 // 오류 핸들러 모듈 사용
-var expressErrorHandler = require('express-error-handler');
+// var expressErrorHandler = require('express-error-handler');
 // Session 미들웨어 불러오기
 var expressSession = require('express-session');
 // 몽고디비 모듈 사용
-var MongoClient = require('mongodb').MongoClient; 
+// var MongoClient = require('mongodb').MongoClient; 
 // mongoose 모듈 불러들이기
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 
-var database = require('../app.js');
+var database = require('../app');
 var UserModel = require('../model/user');
 
 // 익스프레스 객체 생성
@@ -79,7 +79,7 @@ var authUser = function(database, id, password, callback){
     console.log('authUser 호출됨 :' + id + ', ' + password);
     
     // 아이디와 비밀번호를 사용해 검색
-    UserModel.find({"id": id, "passowrd": password}, function(err,results){
+    UserModel.find({"id": id, "password": password}, function(err,results){
         if(err){
             callback(err, null);
             return;

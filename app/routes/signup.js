@@ -1,9 +1,8 @@
-
 var database = require('../app.js');
 var UserModel = require('../model/user');
 
-var router = express.Router();
-
+//var router = express.Router();
+var router = require('./')
 router.route('/signup').post(function(req,res){
     console.log('/signup 호출됨.');
     
