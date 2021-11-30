@@ -6,7 +6,6 @@ var expressSession = require("express-session");
 var database = require("../app");
 var UserModel = require("../model/user");
 
-
 var app = express();
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({extended: false});
@@ -16,7 +15,7 @@ var urlencodedParser = bodyParser.urlencoded({extended: false});
 var router = express.Router();
 
 // 로그인 라우터 함수 - 데이터베이스의 정보와 비교
-router.post("/", function (req, res) {
+router.post("/", urlencodedParser, function (req, res) {
   console.log("/process/login 호출됨.");
 
   var paramId = req.body.id || req.query.id;
