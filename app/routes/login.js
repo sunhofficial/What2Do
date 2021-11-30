@@ -1,38 +1,22 @@
-// Express 기본 모듈 사용하기
+
 var express = require("express");
-// var http = require('http')
-// var path = require('path');
-// Express의 미들웨어 불러오기
 var bodyParser = require("body-parser");
-var cookieParser = require("cookie-parser");
-// var static = require('serve-static')
-// var errorHandler = require('errorhandler');
-// 오류 핸들러 모듈 사용
-// var expressErrorHandler = require('express-error-handler');
-// Session 미들웨어 불러오기
 var expressSession = require("express-session");
-// 몽고디비 모듈 사용
-// var MongoClient = require('mongodb').MongoClient;
-// mongoose 모듈 불러들이기
-// var mongoose = require('mongoose');
 
 var database = require("../app");
 var UserModel = require("../model/user");
 
-// 익스프레스 객체 생성
+
 var app = express();
-// body-parser를 사용해 application/x-www-form-urlencoded 파싱
-app.use(bodyParser.urlencoded({ extended: false }));
-// body-parser를 사용해 application/json 파싱
-app.use(bodyParser.json());
-// cookie-parser 설정
-app.use(cookieParser());
-//============== 라우팅 함수 등록 ============//
-// 라우터 객체 참조
+var jsonParser = bodyParser.json()
+var urlencodedParser = bodyParser.urlencoded({extended: false});
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+
 var router = express.Router();
 
 // 로그인 라우터 함수 - 데이터베이스의 정보와 비교
-router.post("/process/login", function (req, res) {
+router.post("/", function (req, res) {
   console.log("/process/login 호출됨.");
 
   var paramId = req.body.id || req.query.id;

@@ -1,5 +1,12 @@
+var express = require("express");
+var database = require("../app.js");
 var database = require("../app.js");
 var UserModel = require("../model/user");
+
+var app = express();
+var bodyParser = require("body-parser");
+var jsonParser = bodyParser.json()
+var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 var router = express.Router();
 router.post("/signup", function (req, res) {
