@@ -1,23 +1,19 @@
-
 var express = require("express");
-var bodyParser = require("body-parser");
-var expressSession = require("express-session");
-
 var database = require("../app");
 var UserModel = require("../model/user");
-
 var app = express();
+var bodyParser = require("body-parser");
+//app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.json());
+var router = express.Router();
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({extended: false});
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
 
-var router = express.Router();
 
 // 로그인 라우터 함수 - 데이터베이스의 정보와 비교
 router.post("/", urlencodedParser, function (req, res) {
   console.log("/process/login 호출됨.");
-
+  console.log(req.body);
   var paramId = req.body.id || req.query.id;
   var paramPassword = req.body.password || req.query.password;
 
@@ -34,13 +30,13 @@ router.post("/", urlencodedParser, function (req, res) {
         res.wirte("<h1>로그인 성공</h1>");
         res.write("<div><p>사용자 아이디 : " + paramId + "</p></div>");
         res.write("<div><p>사용자 이름 : " + paramPassword + "</p></div>");
-        res.write("<br><br><a href='/public/login.html'>다시 로그인하기</a>");
+        res.write("<br><br><a href='/'>다시 로그인</a>");
         res.end();
       } else {
         res.writeHead("200", { "Content-Type": "text/html;charset=utf8" });
         res.write("<h1>로그인 실패</h1>");
         res.write("<div><p>아이디와 비밀번호를 다시 확인하십시오.</p></div>");
-        res.write("<br><br><a href='/public/login.html'>다시 로그인하기</a>");
+        res.write("<br><br><a href='/'>다시 로그인</a>");
         res.end();
       }
     });
