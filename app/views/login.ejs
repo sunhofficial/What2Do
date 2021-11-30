@@ -9,9 +9,26 @@
     <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
 </head>
 <body>
-<div><a href="/auth/login/kakao"><img src="/images/kakaolog.png" width=" 300px" height="60px"></a></div>
-<div><a href="/auth/login/naver"><img src="/images/naverlog.png" width=" 300px" height="60px"></a></div>
+    <h1>로그인</h1>
+    <br>
+    <form method="post" action="/process/login">
+        <table>
+            <tr>
+                <td><label>아이디</label></td>
+                <td><input type="text" name="id"></td>
+            </tr>
+            <tr>
+                <td><labeL>비밀번호</labeL></td>
+                <td><input type="password" name="password"></td>
+            </tr>
+        </table>
+        <input type="submit" value="전송" name=""> 
+           
+    </form>
+    <div><a href="/auth/login/kakao"><img src="/images/kakaolog.png" width=" 300px" height="60px"></a></div>
+    <div><a href="/auth/login/naver"><img src="/images/naverlog.png" width=" 300px" height="60px"></a></div>
 
+    <a href="/signup">회원가입</a>
     
 </body>
 </html>

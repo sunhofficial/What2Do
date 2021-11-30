@@ -8,6 +8,28 @@
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
     <script src="../routes/auth.js"></script>
+    <style>
+        .date{
+            width: 50px;
+            height: 50px;
+            background: purple;
+            color: white;
+            size: 100px;
+            text-align: center;
+            font-size: 100px;
+        
+        }
+        .hide{
+            display: none;
+
+        }
+        #start{
+
+            height: 250px;
+
+
+        }
+    </style>
 </head>
 <body>
     <h3>Login Success</h3>
@@ -15,11 +37,24 @@
     <a href="/auth/logout">Logout</a>
 
     <a href="/map">Map을 들어가보자</a>
-
-    <p>
-        
-    </p>
+    
+    <button type="button" id="start">What 2 Do</button>
+    <form class="hide">
+        <h3>오늘의 데이트를 정해주세요</h3>
+        <a href="/manman" class="date">남-남</a>
+        <a href="/girlgirl" class="date">여-여</a>
+        <a href="/couple" class="date">남-여</a>
+    </form>
 
     
 </body>
+<script>
+    let BTn=document.getElementById("start");
+    BTn.addEventListener("click",startingapp);
+    ptag=document.querySelector('form');
+    function startingapp(){
+        ptag.classList.remove("hide");
+        BTn.classList.add("hide");
+    }
+</script>
 </html>

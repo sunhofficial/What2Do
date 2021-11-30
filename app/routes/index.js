@@ -17,4 +17,17 @@ router.get("/", (req, res) => {
 router.get("/map", (req, res) => {
   res.render("map");
 });
+router.get("/manman", (req, res) => {
+  res.render("manman");
+});
+router.get("/girlgirl", (req, res) => {
+  res.render("girlgirl");
+});
+router.get("/couple", (req, res) => {
+  res.render("couple");
+});
+router.get("/signup", (req, res) => {
+  res.render("signup");
+});
+
 module.exports = router;

@@ -42,7 +42,6 @@ router.get("/logout", (req, res) => {
     req.session.destroy((err) => {
       //세션제거
       if (err) throw err;
-      console.log(session);
       res.redirect("/");
     });
   } else {

@@ -5,5 +5,5 @@ const UserSchema = new mongoose.Schema({
   id: { type: String, required: false },
   pw: { type: String, required: false },
 });
-
-module.exports = mongoose.model("User", UserSchema);
+var UserModel = mongoose.model("User", UserSchema);
+module.exports = UserModel;
