@@ -1,15 +1,17 @@
 var express = require("express");
 var database = require("../app.js");
-var database = require("../app.js");
 var UserModel = require("../model/user");
 
 var app = express();
 var bodyParser = require("body-parser");
-var jsonParser = bodyParser.json()
-var urlencodedParser = bodyParser.urlencoded({extended: false});
+var jsonParser = bodyParser.json();
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 var router = express.Router();
-router.post("/signup", function (req, res) {
+router.get("/", (req, res) => {
+  res.render("signup");
+});
+router.post("/", urlencodedParser, function (req, res) {
   console.log("/signup 호출됨.");
 
   var paramId = req.body.id || req.query.id;
@@ -35,11 +37,7 @@ router.post("/signup", function (req, res) {
         //결과 객체 확인하여 추가된 데이터 있으면 성공 응답 전송
         //if(result && result.insertedCount > 0){
         if (addedUser) {
-          console.dir(addedUser);
-
-          res.writeHead("200", { "Content-Type": "text/html;charset=utf8" });
-          res.write("<h2>사용자 추가 성공</h2>");
-          res.end();
+          res.render("users");
         } else {
           res.writeHead("200", { "Content-Type": "text/html;charset=utf8" });
           res.write("<h2>사용자 추가 실패</h2>");

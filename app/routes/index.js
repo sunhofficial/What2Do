@@ -34,9 +34,6 @@ router.get("/playing", (req, res) => {
   res.render("playing");
 });
 
-router.get("/signup", (req, res) => {
-  res.render("signup");
-});
 router.get("/culture", (req, res) => {
   res.render("culture");
 });
