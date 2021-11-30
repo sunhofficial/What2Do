@@ -7,18 +7,12 @@
     <title>Document</title>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+    <script src="/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/bootstraps/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/bootstraps/css/bootstrap.min.css"/>
     <script src="../routes/auth.js"></script>
     <style>
-        .date{
-            width: 50px;
-            height: 50px;
-            background: purple;
-            color: white;
-            size: 100px;
-            text-align: center;
-            font-size: 100px;
-        
-        }
         .hide{
             display: none;
 
@@ -39,12 +33,57 @@
     <a href="/map">Map을 들어가보자</a>
 
     <button type="button" id="start">What 2 Do</button>
-    <form class="hide">
-        <h3>오늘의 데이트를 정해주세요</h3>
-        <a href="/manman" class="date">남-남</a>
-        <a href="/girlgirl" class="date">여-여</a>
-        <a href="/couple" class="date">남-여</a>
-    </form>
+
+    
+    <div class="container hide">
+        <div class="page-header"><h1 style="color: cadetblue;">추천테마</h1></div>
+        <div class="container-fluid">
+         
+            <div class="row gy-4 mt-5 justify-content-center" >
+                <div class="col-xl-2 col-md-4">
+                  <div class="icon-box">
+                    <i class="ri-store-line"></i>
+                    <h3><a href="/foodtravel">맛집탐방</a></h3>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-md-4">
+                  <div class="icon-box">
+                    <i class="ri-bar-chart-box-line"></i>
+                    <h3><a href="/shopping">쇼핑</a></h3>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-md-4">
+                  <div class="icon-box">
+                    <i class="ri-calendar-todo-line"></i>
+                    <h3><a href="/healing">힐링코스</a></h3>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-md-4">
+                  <div class="icon-box">
+                    <i class="ri-paint-brush-line"></i>
+                    <h3><a href="/playing">놀거리</a></h3>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-md-4">
+                  <div class="icon-box">
+                    <i class="ri-database-2-line"></i>
+                    <h3><a href="/alchoal">술(alchoal)</a></h3>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-md-4">
+                    <div class="icon-box">
+                      <i class="ri-database-2-line"></i>
+                      <h3><a href="/culture">문화체험</a></h3>
+                    </div>
+                  </div>
+              </div>
+        
+             
+        </div>
+         
+        </div>
+    
+
 
     <p>
         
@@ -56,7 +95,7 @@
 <script>
     let BTn=document.getElementById("start");
     BTn.addEventListener("click",startingapp);
-    ptag=document.querySelector('form');
+    ptag=document.querySelector('.hide');
     function startingapp(){
         ptag.classList.remove("hide");
         BTn.classList.add("hide");

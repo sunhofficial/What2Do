@@ -18,18 +18,27 @@ router.get("/map", (req, res) => {
   res.render("map");
 });
 
-router.get("/manman", (req, res) => {
-  res.render("manman");
+router.get("/alchoal", (req, res) => {
+  res.render("alchoal");
 });
-router.get("/girlgirl", (req, res) => {
-  res.render("girlgirl");
+router.get("/foodtravel", (req, res) => {
+  res.render("foodtravel");
 });
-router.get("/couple", (req, res) => {
-  res.render("couple");
+router.get("/healing", (req, res) => {
+  res.render("healing");
+});
+router.get("/shopping", (req, res) => {
+  res.render("shopping");
+});
+router.get("/playing", (req, res) => {
+  res.render("playing");
 });
 
 router.get("/signup", (req, res) => {
   res.render("signup");
+});
+router.get("/culture", (req, res) => {
+  res.render("culture");
 });
 
 module.exports = router;
