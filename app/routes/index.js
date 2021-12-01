@@ -38,4 +38,8 @@ router.get("/culture", (req, res) => {
   res.render("culture");
 });
 
+router.get("/login", (req, res) => {
+  res.render("login");
+});
+
 module.exports = router;

@@ -58,7 +58,7 @@ var addUser = function (database, id, password, name, callback) {
   console.log("addUser 호출됨 : " + id + ", " + password + ", " + name);
 
   // UserModel의 인스턴스 객체 생성
-  var user = new UserModel({ id: id, passowrd: password, name: name });
+  var user = new UserModel({ id: id, password: password, name: name });
 
   // save()로 저장
   user.save(function (err) {

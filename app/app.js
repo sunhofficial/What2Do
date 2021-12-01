@@ -55,6 +55,5 @@ app.use("/", indexRouter);
 app.use("/auth", authRouter);
 app.use("/login", loginRouter);
 app.use("/signup", signupRouter);
-//app.use("/signup", signupRouter);
 
 module.exports = app;
