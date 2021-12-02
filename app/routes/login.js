@@ -6,9 +6,8 @@ var bodyParser = require("body-parser");
 //app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(bodyParser.json());
 var router = express.Router();
-var jsonParser = bodyParser.json()
-var urlencodedParser = bodyParser.urlencoded({extended: false});
-
+var jsonParser = bodyParser.json();
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 // 로그인 라우터 함수 - 데이터베이스의 정보와 비교
 router.post("/", urlencodedParser, function (req, res) {
@@ -28,7 +27,7 @@ router.post("/", urlencodedParser, function (req, res) {
         //console.dir(docs);
         var username = docs[0].name;
         console.log(username);
-        req.session.islogined=true;
+        req.session.islogined = true;
         req.session.userid = paramId;
         req.session.username = username;
         // res.writeHead("200", { "Content-Type": "text/html;charset=utf8" });
@@ -66,7 +65,6 @@ var authUser = function (database, id, password, callback) {
     }
 
     console.log("아이디 [%s], 비밀번호 [%s]로 사용자 검색 결과", id, password);
-    //console.dir(results);
 
     if (results.length > 0) {
       console.log("일치하는 사용자 찾음.", id, password);
