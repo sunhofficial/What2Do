@@ -28,6 +28,9 @@ router.post("/", urlencodedParser, function (req, res) {
         //console.dir(docs);
         var username = docs[0].name;
         console.log(username);
+        req.session.islogined=true;
+        req.session.userid = paramId;
+        req.session.username = username;
         // res.writeHead("200", { "Content-Type": "text/html;charset=utf8" });
         // res.write("<h1>로그인 성공</h1>");
         // res.write("<div><p>사용자 아이디 : " + paramId + "</p></div>");
@@ -36,7 +39,6 @@ router.post("/", urlencodedParser, function (req, res) {
         res.render("users");
         // res.end();
       } else {
-        console.log("??");
         res.writeHead("200", { "Content-Type": "text/html;charset=utf8" });
         res.write("<h1>로그인 실패</h1>");
         res.write("<div><p>아이디와 비밀번호를 다시 확인하십시오.</p></div>");
@@ -45,7 +47,6 @@ router.post("/", urlencodedParser, function (req, res) {
       }
     });
   } else {
-    console.log("kkk");
     res.writeHead("200", { "Content-Type": "text/html;charset=utf8" });
     res.write("<h2>데이터베이스 연결 실패</h2>");
     res.write("<div><p>데이터베이스에 연결하지 못했습니다.</p></div>");
@@ -60,7 +61,6 @@ var authUser = function (database, id, password, callback) {
   // 아이디와 비밀번호를 사용해 검색
   UserModel.find({ id: id, password: password }, function (err, results) {
     if (err) {
-      console.log("ERROR");
       callback(err, null);
       return;
     }

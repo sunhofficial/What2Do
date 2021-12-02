@@ -38,6 +38,7 @@ router.get(
 router.get("/logout", (req, res) => {
   console.log("logoutsession", req.session.islogined);
   if (req.session.islogined) {
+    console.log("LOGOUT");
     req.logout();
     req.session.destroy((err) => {
       //세션제거
@@ -46,6 +47,7 @@ router.get("/logout", (req, res) => {
     });
   } else {
     //로그아웃 실패
+    console.log("??");
     res.status(404).send("로그인 해주세요");
   }
 });
