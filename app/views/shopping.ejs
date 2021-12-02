@@ -4,26 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link> 
     <script src="/jquery/jquery-3.6.0.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
+
     <script src="/bootstraps/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/find.css">
 
     <link rel="stylesheet" type="text/css" href="/bootstraps/css/bootstrap.min.css"/>
-
+    <script src="/javascript/search.js"></script>
     <title>Shopping date</title>
-
 </head>
+<script>
+
+    $(function () {	//화면 로딩후 시작
+        $("#myInput").autocomplete({  //오토 컴플릿트 시작
+            source: List,	
+            focus : function(event, ui) { // 방향키로 자동완성단어 선택 가능하게 만들어줌	
+                return false;
+            },
+            minLength: 1,// 최소 글자수
+            delay: 100,	//autocomplete 딜레이 시간(ms)
+            position:{my :'right top', at:'right bottom'},
+
+        });
+    });
+
+    </script>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">쇼핑 데이트</a>
+            <a class="navbar-brand" href="#">쇼핑 탐방</a>
             <a href="/" type="button" class="btn btn-info">before</a>
         </div>
     </nav>
-    <form class="hide">
-        <h3>오늘의 데이트를 정해주세요</h3>
-        <a href="/manman" class="date">남-남</a>
-        <a href="/girlgirl" class="date">여-여</a>
-        <a href="/couple" class="date">남-여</a>
-    </form>
+    <form class="input-group">
+        <input type="text" id="myInput"  class="form-control" placeholder="오늘의 목적지를 입력하세요!">
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button">찾기</button>
+        </span>
+      </form>
+
+      
+
+      
 </body>
 </html>
