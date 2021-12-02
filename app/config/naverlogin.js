@@ -20,6 +20,7 @@ passport.use(
       callbackURL: "/auth/login/naver/callback",
     },
     function (accessToken, refreshToken, profile, done) {
+      console.log("NAVER");
       console.log(profile);
       const _profile = profile._json;
       console.log(_profile);
