@@ -2,6 +2,7 @@ import pandas as pd
 from selenium import webdriver
 import time
 import googlemaps
+import sys
 
 options = webdriver.ChromeOptions()
 options.add_argument('window-size=1000,800')
@@ -12,7 +13,8 @@ list1 = []
 list2 = []
 list3 = []
 
-keyword = input()
+keyword = sys.argv[1]
+
 kakao_map_search_url = f"https://map.kakao.com/?q={keyword}"
 driver.get(kakao_map_search_url)
 time.sleep(1)
@@ -88,4 +90,9 @@ frame['위도'] = lat
 frame['경도'] = lng
 
 
-# driver.quit()
+driver.quit()
+
+# Encoding
+sys.stdout.reconfigure(encoding = 'utf-8')
+# Node로 정보 전달
+print(frame)

@@ -4,7 +4,7 @@ import time
 import googlemaps
 from selenium.webdriver.common.keys import Keys
 import urllib.request
-
+import sys
 
 options = webdriver.ChromeOptions()
 options.add_argument('window-size=1000,800')
@@ -19,6 +19,7 @@ list5 = []
 list6 = []
 
 keyword = "창경궁"
+#keyword = sys.argv[1]
 kakao_map_search_url = f"https://map.kakao.com/?q={keyword}"
 driver.get(kakao_map_search_url)
 time.sleep(1)
@@ -183,3 +184,8 @@ for i, shopName in enumerate(frame['가게 이름'].tolist()):
 
 
 driver.quit()
+
+# Encoding
+sys.stdout.reconfigure(encoding = 'utf-8')
+# Node로 정보 전달
+print(frame)
