@@ -21,9 +21,7 @@ router.get("/map", (req, res) => {
 router.get("/alchoal", (req, res) => {
   res.render("alchoal");
 });
-router.get("/foodtravel", (req, res) => {
-  res.render("foodtravel");
-});
+
 router.get("/healing", (req, res) => {
   res.render("healing");
 });

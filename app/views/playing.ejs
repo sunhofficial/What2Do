@@ -24,10 +24,22 @@
     </nav>
     <form class="input-group">
         <input type="text" id="myInput"  class="form-control" placeholder="오늘의 목적지를 입력하세요!">
-        <span class="input-group-btn">
-          <button class="btn btn-secondary" type="button">찾기</button>
-        </span>
-      </form>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">남-남</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="option2" checked>
+        <label class="form-check-label" for="inlineRadio2">남-여(커플)</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="option3">
+        <label class="form-check-label" for="inlineRadio3">여-여</label>
+      </div>
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="submit">찾기</button>
+      </span>
+    </form>
 
       <script>
 
@@ -42,7 +54,8 @@
                 position:{my :'right top', at:'right bottom'}
             });
         });
- 
+
+    
         </script>
 
       
