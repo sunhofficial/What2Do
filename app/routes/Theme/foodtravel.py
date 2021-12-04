@@ -1,15 +1,16 @@
 import pandas as pd
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 import time
-import googlemaps
 from selenium.webdriver.common.keys import Keys
 import urllib.request
 import sys
 
 options = webdriver.ChromeOptions()
 options.add_argument('window-size=1000,800')
+options.add_argument("headless")
 
-driver = webdriver.Chrome('chromedriver.exe', options=options)
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
 list1 = []
 list2 = []
@@ -74,23 +75,6 @@ list3.append(address)
 frame = pd.DataFrame([list1, list2, list3])
 frame.columns = ['가게 이름', '리뷰수', '평점', '주소']
 
-gmaps_key = 'AIzaSyCI4ACwvGOoCKWbTtAz8wU17fDF5KCCWTA'
-gmaps = googlemaps.Client(key=gmaps_key)
-
-lat = []
-lng = []
-for name in frame['주소']:
-    try:
-        tmpMap = gmaps.geocode(name, language='ko')
-        tmpLoc = tmpMap[0].get('geometry')
-        lat.append(tmpLoc['location']['lat'])
-        lng.append(tmpLoc['location']['lng'])
-    except:
-        print("{} Address Error".format(name))
-        lat.append(None)
-        lng.append(None)
-frame['위도'] = lat
-frame['경도'] = lng
 
 for i, shopName in enumerate(frame['가게 이름'].tolist()):
     driver.get("https://www.google.co.kr/imghp?hl=ko&tab=ri&ogbl")
@@ -101,12 +85,13 @@ for i, shopName in enumerate(frame['가게 이름'].tolist()):
     time.sleep(3)
     imgUrl = driver.find_element_by_css_selector(
         ".n3VNCb").get_attribute("src")
-    urllib.request.urlretrieve(imgUrl, str(i)+".jpg")
+    urllib.request.urlretrieve(
+        imgUrl, "./app/public/images/food/"+str(shopName)+".jpg")
 
 
 driver.quit()
 
 # Encoding
-sys.stdout.reconfigure(encoding = 'utf-8')
+sys.stdout.reconfigure(encoding='utf-8')
 # Node로 정보 전달
 print(frame)
