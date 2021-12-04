@@ -20,7 +20,7 @@ passport.deserializeUser((req, user, done) => {
 router.get("/login/kakao", passport.authenticate("kakao"));
 router.get(
   "/login/kakao/callback",
-  passport.authenticate("kakao", { failureRedirect: "/auth/login" }),
+  passport.authenticate("kakao", { failureRedirect: "/" }),
   function (req, res) {
     console.log("successlogin");
     res.render("users");

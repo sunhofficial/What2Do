@@ -14,6 +14,7 @@ passport.use(
         if (err) return res.status(400).send("카카오 로그인 에러");
         else if (user) {
           id = profile.id;
+
           return done(null, user);
         } else {
           const new_user = new User({
