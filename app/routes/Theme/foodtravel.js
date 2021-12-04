@@ -10,15 +10,18 @@ router.get("/", (req, res) => {
   res.render("foodtravel");
 });
 
-router.post("/", (req, res) => {
+router.post("/",urlencodedParser, (req, res) => {
   console.log("post 성공이야~!");
-  let place = req.body.place;
+  var user_place = req.body.user_place || req.query.user_place;
   console.log("foodtravel.js 접근");
-  console.log(place);
+  console.log(user_place);
 
   // python 연결
   const spawn = require("child_process").spawn;
-  const python = spawn("python", ["foodtravel.py", place]);
+  const currentDirectory = __dirname;
+  const python = spawn("python", [currentDirectory+"./foodtravel.py", user_place]);
+
+  console.log("python 연결");
 
   python.stdout.on("data", function (data) {
     var result = data.toString("utf-8");
