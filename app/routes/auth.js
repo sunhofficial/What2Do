@@ -47,7 +47,6 @@ router.get("/logout", (req, res) => {
     });
   } else {
     //로그아웃 실패
-    console.log("??");
     res.status(404).send("로그인 해주세요");
   }
 });

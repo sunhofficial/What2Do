@@ -84,7 +84,7 @@ list3.append(resName)
 list3.append(reviewNum)
 list3.append(rate)
 list3.append(address)
-cnt+=1
+cnt += 1
 
 frame = pd.DataFrame([list1, list2, list3])
 frame.columns = ['가게 이름', '리뷰수', '평점', '주소']
