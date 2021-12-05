@@ -37,6 +37,9 @@ router.post("/", urlencodedParser, function (req, res) {
         //결과 객체 확인하여 추가된 데이터 있으면 성공 응답 전송
         //if(result && result.insertedCount > 0){
         if (addedUser) {
+          req.session.islogined=true;
+          req.session.userid = paramId;
+          req.session.username = paramName;
           res.render("users");
         } else {
           res.writeHead("200", { "Content-Type": "text/html;charset=utf8" });
