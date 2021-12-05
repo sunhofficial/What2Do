@@ -5,7 +5,7 @@ import time
 from selenium.webdriver.common.keys import Keys
 import urllib.request
 import sys
-from bs4 import BeautifulSoup
+
 
 options = webdriver.ChromeOptions()
 options.add_argument('window-size=1000,800')
@@ -20,7 +20,7 @@ cnt = 1
 
 
 # 사용자가 input 한 place 가져옴
-keyword = sys.argv[1]
+keyword = sys.argv[1]+" 맛집"
 
 kakao_map_search_url = f"https://map.kakao.com/?q={keyword}"
 driver.get(kakao_map_search_url)
@@ -108,4 +108,19 @@ driver.quit()
 # Encoding
 sys.stdout.reconfigure(encoding='utf-8')
 # Node로 정보 전달
-print(frame)
+
+df = pd.DataFrame(frame['가게 이름'])
+# print(df)
+
+df = df.to_numpy()
+list = df.tolist()
+
+string = '/'.join(str(e) for e in list)
+
+for i in range(len(string)):
+    string = string.replace('[', "")
+    string = string.replace(']', "")
+    string = string.replace(',', "")
+    string = string.replace("'", "")
+
+print(string)
