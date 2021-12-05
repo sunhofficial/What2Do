@@ -12,21 +12,11 @@ const loginRouter = require("./routes/login");
 const signupRouter = require("./routes/signup");
 const foodtravelRouter = require("./routes/Theme/foodtravel");
 const app = express();
-dotenv.config();
+dotenv.config({path: 'process.env'});
 
 mongoose.Promise = global.Promise;
-
-// var database;
-// function connectDB(){
-//   var databaseUrl = "mongodb://localhost/";
-//   console.log("Database Connecton Successful.");
-
-//   mongoose.Promise = global.Promise;
-//   mongoose.connect(databaseUrl);
-//   database = mongoose.connection;
-// }
 mongoose
-  .connect("mongodb://localhost/")
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("connection successful"))
   .catch((err) => console.error(err));
 /*
