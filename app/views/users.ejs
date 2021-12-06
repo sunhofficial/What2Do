@@ -14,6 +14,13 @@
     <link rel="stylesheet" type="text/css" href="/bootstraps/css/bootstrap.min.css"/>
     <!-- <script src="../routes/auth.js"></script> -->
     <style>
+      body{
+        background-color: beige;    
+        background-image: url("/images/what2doimg.jpg");
+        background-repeat: repeat-x;
+        background-position: 0% -270%;
+      }
+            
         .hide{
             display: none;
 
@@ -28,13 +35,38 @@
             
         }
 
+        .hero-btn{
+          background-color: red;
+          border: none;
+          opacity: 0.8;
+        }
         .hero-btn:hover {
-          background: #2ecc71;
-          border-color: #2ecc71;
+          will-change: transform;
+          animation: heartbeat 1s ease-in-out infinite;
+          
         }
 
+        @keyframes heartbeat{
+          0%{
+              background-color: wheat;
+              transform: none;
+          }
+          50%{
+            background-color: red;
+              transform: scale(2);
+          }
+          100%{
+            background-color: wheat;
+              transform: none;
+          }
+      }
+
         .btn-info a{
-          color: #2ecc71;
+          color: #010b0c;
+          font-size: 20px;
+        }
+        .btn-danger a{
+          color: #010b0c;
           font-size: 20px;
         }
         .out{
@@ -47,7 +79,8 @@
         .hero-area-inner{
           display: flex;
           justify-content: center;
-          align-items: center;
+          
+          text-align: center;
           margin: auto;
         }
         .icon-box img{
@@ -61,7 +94,44 @@
         .col-lg-9{
           position: absolute;
           bottom: 50%;
-          left: 10%;
+          left: 10%;        
+          
+        }
+
+        .col-lg-9 h1{          
+          position: relative;
+          top: 100px;
+          border-bottom: 12px solid #327a9b; 
+          padding: 0 0 0 0.2em;
+          background-image: url(/images/what2doimg.jpg);
+          background-size: cover;
+        }
+        .first-screen{
+          display: block;
+          justify-content: center;
+          position: relative;
+          top: 150px;
+        }
+        .container-fluid{
+          position: relative;
+          top: 150px;
+        }  
+        
+        .out{
+          display: flex;
+          justify-content: right;
+        }
+        .map{
+          display: flex;
+          justify-content: left;
+          position: relative;
+          top: 50px;
+        }
+        .sub{
+          display: inline;
+        }
+        .col-md-4 a{
+          color: black;
         }
 
     </style>
@@ -69,8 +139,11 @@
 <body>
     <div class="hero-area-inner">
       <div class="col-lg-9">
-        <h1>와 미쳤다 오늘 뭐하지?</h1>
-    <button type="button" id="start" class="hero-btn">What 2 Do</button>
+        <h1>↓↓ 오늘 뭐할지 모르겠다면 클릭 ↓↓</h1>
+        <div class="first-screen">          
+       <button type="button" id="start" class="hero-btn">와 미쳤다 오늘 뭐하지?</button>
+        </div>
+        
     <div class="container hide">
       <div class="page-header"><h1 style="color: cadetblue;">추천테마</h1></div>
       <div class="container-fluid">
@@ -117,26 +190,20 @@
                   </div>
                 </div>
             </div>
+            <div class="sub">
+              <div class="map">
+                <button type="button" class="btn btn-info"><a href="/map">이미 나는 가고 싶은 곳이 있다</a></button></div>
+                <div class="out">
+                  <button type = "button" class = "btn btn-danger"><a href = "/auth/logout">Logout</a> </button>
+                </div>
+            </div>
+            
+  </div>   
   </div>
-    <div class="out">
-    <button type = "button" class = "btn btn-danger"><a href = "/auth/logout">Logout</a> </button>
-  </div>
-  <div class="map">
-  <button type="button" class="btn btn-info"><a href="/map">이미 나는 가고 싶은 곳이 있다</a></button></div>
-  </div>
-
-   
-
-
+        </div>
         </div>
 
-        </div>
-
-
-
-    <p>
-
-    </p>
+        
 
 
 
