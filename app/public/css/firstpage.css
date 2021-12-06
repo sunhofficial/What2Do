@@ -1,0 +1,124 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.wrap{
+    height: 100%;
+    width: 100%;
+    /* background-image: url(~)
+    background-position: center;
+    background-size: cover;*/
+    position: absolute;
+}
+
+.form-wrap{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: rgba(172, 158, 158, 0.342);
+    padding: 5px;
+    overflow: hidden;
+}
+
+.button-wrap{
+    width: 230px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 600px 9px #fcae8f;
+    border-radius: 30px;
+}
+
+.togglebtn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#btn1{
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 100%;
+    position: absolute;
+    /* background: linear-gradient(to right, #00498c, #9bbbd4); */
+    background: #9bbbd4;
+    border-radius: 30px;
+    transition: .5s;
+}
+
+#btn2{
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 100%;
+    margin-left: 115px;
+    position: absolute;
+    /* background: linear-gradient(to right, #00498c, #9bbbd4); */
+    background: #9bbbd4;
+    border-radius: 30px;
+    transition: .5s;
+}
+
+#btn:active{
+    margin-left: -10px;
+}
+
+.social-icons{
+    margin: 8px auto;
+    text-align: center;
+}
+
+.social-icons img{
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.input-group{
+    top: 120px;
+    position: absolute;
+    width: 280px;
+}
+
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0; /*id password 입력칸 사이 간격*/
+    border: none;
+    border-bottom: 1.3px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.submit{
+    width: 85%;
+    padding: 15px 25px;
+    cursor: pointer;
+    display: block;
+    margin: 15px;
+    /* background: linear-gradient(to right, #ff105f, #ffad06); */
+    background: #9bbbd4;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    
+}
+
+
+#login{
+    left: 50px;
+}
+
+#sign_up{
+    left: 50px;
+}
