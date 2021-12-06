@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/font/fontawesome.min.css">
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
     <script src="/jquery/jquery-3.6.0.min.js"></script>
@@ -18,66 +19,113 @@
 
         }
         #start{
-
+            font-size: 50px;
             height: 250px;
+            width: 50%;
 
+            border-radius: 5%;
 
+            
         }
+
+        .hero-btn:hover {
+          background: #2ecc71;
+          border-color: #2ecc71;
+        }
+
+        .btn-info a{
+          color: #2ecc71;
+          font-size: 20px;
+        }
+        .out{
+          text-align: center;
+        }
+
+        h1 {
+          margin: 0 0 15px;
+        }
+        .hero-area-inner{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: auto;
+        }
+        .icon-box img{
+          height: 200px;
+          width: 150px;
+          display: block;
+        }
+        .page-header h1{
+          align-content: center;
+        }
+        .col-lg-9{
+          position: absolute;
+          bottom: 50%;
+          left: 10%;
+        }
+
     </style>
 </head>
 <body>
-    <h3>Login Success</h3>
-    <h2></h2>
-    <!--<a href="/auth/logout">Logout</a>-->
-    <a href = "/auth/logout">Logout</a>
-
-    <a href="/map">Map을 들어가보자</a>
-
-    <button type="button" id="start">What 2 Do</button>
-
-
+    <div class="hero-area-inner">
+      <div class="col-lg-9">
+        <h1>와 미쳤다 오늘 뭐하지?</h1>
+    <button type="button" id="start" class="hero-btn">What 2 Do</button>
     <div class="container hide">
-        <div class="page-header"><h1 style="color: cadetblue;">추천테마</h1></div>
-        <div class="container-fluid">
+      <div class="page-header"><h1 style="color: cadetblue;">추천테마</h1></div>
+      <div class="container-fluid">
 
-            <div class="row gy-4 mt-5 justify-content-center" >
-                <div class="col-xl-2 col-md-4">
-                  <div class="icon-box">
-                    <i class="ri-store-line"></i>
-                    <h3><a href="/foodtravel">맛집탐방</a></h3>
-                  </div>
+          <div class="row gy-4 mt-5 justify-content-center" >
+              <div class="col-xl-2 col-md-4">
+                <div class="icon-box">
+                  <i class="ri-store-line"></i>
+                  
+                  <h3><a href="/foodtravel"><img src="/images/pizza.jpg">맛집탐방</a></h3>
                 </div>
-                <div class="col-xl-2 col-md-4">
-                  <div class="icon-box">
-                    <i class="ri-bar-chart-box-line"></i>
-                    <h3><a href="/shopping">쇼핑</a></h3>
-                  </div>
+              </div>
+              <div class="col-xl-2 col-md-4">
+                <div class="icon-box">
+                  <i class="ri-bar-chart-box-line"></i>
+                  
+                  <h3><a href="/shopping"><img src="/images/shopping.jpg">쇼핑</a></h3>
                 </div>
-                <div class="col-xl-2 col-md-4">
-                  <div class="icon-box">
-                    <i class="ri-calendar-todo-line"></i>
-                    <h3><a href="/healing">힐링코스</a></h3>
-                  </div>
+              </div>
+              <div class="col-xl-2 col-md-4">
+                <div class="icon-box">
+                  <i class="ri-calendar-todo-line"></i> 
+                  <h3><a href="/healing"><img src="/images/myuniverse.png">힐링코스</a></h3>
                 </div>
-                <div class="col-xl-2 col-md-4">
-                  <div class="icon-box">
-                    <i class="ri-paint-brush-line"></i>
-                    <h3><a href="/playing">놀거리</a></h3>
-                  </div>
+              </div>
+              <div class="col-xl-2 col-md-4">
+                <div class="icon-box">
+                  <i class="ri-paint-brush-line"></i>
+                  <h3><a href="/playing"><img src="/images/boardgame.jpg">놀거리</a></h3>
                 </div>
-                <div class="col-xl-2 col-md-4">
+              </div>
+              <div class="col-xl-2 col-md-4">
+                <div class="icon-box">
+                  <i class="ri-database-2-line"></i>
+                  
+                  <h3><a href="/alchoal"><img src="/images/drinking.jpg">술(alchoal)</a></h3>
+                </div>
+              </div>
+              <div class="col-xl-2 col-md-4">
                   <div class="icon-box">
                     <i class="ri-database-2-line"></i>
-                    <h3><a href="/alchoal">술(alchoal)</a></h3>
+                   
+                    <h3><a href="/culture"> <img src="/images/culture.jpg">문화체험</a></h3>
                   </div>
                 </div>
-                <div class="col-xl-2 col-md-4">
-                    <div class="icon-box">
-                      <i class="ri-database-2-line"></i>
-                      <h3><a href="/culture">문화체험</a></h3>
-                    </div>
-                  </div>
-              </div>
+            </div>
+  </div>
+    <div class="out">
+    <button type = "button" class = "btn btn-danger"><a href = "/auth/logout">Logout</a> </button>
+  </div>
+  <div class="map">
+  <button type="button" class="btn btn-info"><a href="/map">이미 나는 가고 싶은 곳이 있다</a></button></div>
+  </div>
+
+   
 
 
         </div>
