@@ -6,46 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link> 
     <script src="/jquery/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script> -->
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
 
     <script src="/bootstraps/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/find.css">
+    <link rel="stylesheet" type="text/css" href="/css/map.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/top_picture.css"/>
 
     <link rel="stylesheet" type="text/css" href="/bootstraps/css/bootstrap.min.css"/>
     <script src="/javascript/search.js"></script>
-    <title>Shopping date</title>
+
+
+    <title></title>
 </head>
-<script>
-
-    $(function () {	//화면 로딩후 시작
-        $("#myInput").autocomplete({  //오토 컴플릿트 시작
-            source: List,	
-            focus : function(event, ui) { // 방향키로 자동완성단어 선택 가능하게 만들어줌	
-                return false;
-            },
-            minLength: 1,// 최소 글자수
-            delay: 100,	//autocomplete 딜레이 시간(ms)
-            position:{my :'right top', at:'right bottom'},
-
-        });
-    });
-
-    </script>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">쇼핑 탐방</a>
+            <a class="navbar-brand" href="#">패션 탐방</a>
             <a href="/" type="button" class="btn btn-info">before</a>
         </div>
     </nav>
-    <form class="input-group">
-        <input type="text" id="myInput"  class="form-control" placeholder="오늘의 목적지를 입력하세요!">
+    <div class="input-group" >
+        <input type="text" id="myInput"  class="form-control" placeholder="오늘의 목적지를 입력하세요!" name='user_place'>
         <span class="input-group-btn">
-          <button class="btn btn-secondary" type="button">찾기</button>
+          <button class="btn btn-secondary" onclick="fill()" type="button">찾기</button>
         </span>
-      </form>
+      </div>      
+      <div class="map_wrap">
+        <div id="map" style="width:100%;height:100%;"></div>
+    
+        <div id="menu_wrap" class="bg_white">
+            <div class="option">
+                <div>
+                    <form onsubmit="searchPlaces(); return false;">
+                        키워드 : <input type="text" value="옷가게" id="keyword" size="15"> 
+                        <button id="keywordsearch" type="submit">검색하기</button> 
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <ul id="placesList"></ul>
+            <div id="pagination"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=23f90b23f8f678caad181fbb316393fc&libraries=services,clusterer"></script>
+    <script>
+        function fill(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            keyword.value=input.value+" 옷가게";
+            const search=document.getElementById("keywordsearch");
+            search.click();
 
-      
+        }
+    </script>
+    <script>
+
+        $(function () {	//화면 로딩후 시작
+            $("#myInput").autocomplete({  //오토 컴플릿트 시작
+                source: List,	
+                focus : function(event, ui) { // 방향키로 자동완성단어 선택 가능하게 만들어줌	
+                    return false;
+                },
+                minLength: 1,// 최소 글자수
+                delay: 100,	//autocomplete 딜레이 시간(ms)
+                position:{my :'right top', at:'right bottom'}
+            });
+        });
+
+    </script>
+    <script src="/javascript/map.js"></script>
+
+
+
 
       
 </body>

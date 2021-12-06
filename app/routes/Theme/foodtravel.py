@@ -29,7 +29,7 @@ time.sleep(0.2)
 button = driver.find_element_by_xpath(
     "/html/body/div[5]/div[2]/div[1]/div[7]/div[5]/div[1]/ol/li[2]/a")
 driver.execute_script("arguments[0].click();", button)
-time.sleep(0.6)
+time.sleep(0.3)
 
 while True:
     resName = driver.find_element_by_css_selector(

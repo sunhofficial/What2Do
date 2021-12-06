@@ -6,42 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link> 
     <script src="/jquery/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script> -->
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
 
     <script src="/bootstraps/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/find.css">
+    <link rel="stylesheet" type="text/css" href="/css/map.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/top_picture.css"/>
 
     <link rel="stylesheet" type="text/css" href="/bootstraps/css/bootstrap.min.css"/>
     <script src="/javascript/search.js"></script>
-    <title>Play date</title>
+   
+
+
+    <title>Playing date</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">놀거리 탐방</a>
-            <a href="/" type="button" class="btn btn-info">before</a>
-        </div>
-    </nav>
-    <form class="input-group">
-        <input type="text" id="myInput"  class="form-control" placeholder="오늘의 목적지를 입력하세요!">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="option1">
-        <label class="form-check-label" for="inlineRadio1">남-남</label>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+          <a class="navbar-brand" href="#">놀거리 탐방</a>
+          <a href="/" type="button" class="btn btn-info">before</a>
       </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="option2" checked>
-        <label class="form-check-label" for="inlineRadio2">남-여(커플)</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="option3">
-        <label class="form-check-label" for="inlineRadio3">여-여</label>
-      </div>
-      <span class="input-group-btn">
-        <button class="btn btn-secondary" type="submit">찾기</button>
-      </span>
-    </form>
+  </nav>
+  <div class="input-group">
+      <input type="text" id="myInput"  class="form-control" placeholder="오늘의 목적지를 입력하세요!">
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="boys">
+      <label class="form-check-label" for="inlineRadio1">남-남</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="couples" checked>
+      <label class="form-check-label" for="inlineRadio2">남-여(커플)</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="girls">
+      <label class="form-check-label" for="inlineRadio3">여-여</label>
+    </div>
+    <span class="input-group-btn">
+      <button class="btn btn-secondary" id="genderchoose" type="button" onclick="fill()">찾기</button>
+    </span>
+  </div>
+  <div class="choosegame">
 
-      <script>
+  </div>
+
+
+
+      <div class="map_wrap">
+        <div id="map" style="width:100%;height:100%;"></div>
+    
+        <div id="menu_wrap" class="bg_white">
+            <div class="option">
+                <div>
+                    <form onsubmit="searchPlaces(); return false;">
+                        키워드 : <input type="text" value="놀거리" id="keyword" size="15"> 
+                        <button id="keywordsearch" type="submit">검색하기</button> 
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <ul id="placesList"></ul>
+            <div id="pagination"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=23f90b23f8f678caad181fbb316393fc&libraries=services,clusterer"></script>
+    <script>
+        function fill(){
+            
+            const gender=$('input[name=gender]:checked').val(); 
+            const body=document.querySelector(".choosegame");
+            
+            if(gender=="boys"){
+              const addSpan =document.createElement("span");
+              addSpan.innerHTML='<button>당구장</button>';
+              const addSpan1 =document.createElement("span");
+              addSpan1.innerHTML='<button>PC방</button>';
+              const addSpan2 =document.createElement("span");
+              addSpan2.innerHTML='<button>노래방</button>';
+              body.append(addSpan);
+              body.append(addSpan1);
+              body.append(addSpan2);
+    
+            }
+            else if(gender=="girls"){
+              const addSpan =document.createElement("span");
+              addSpan.innerHTML='<button>이니스프리</button>';
+              const addSpan1 =document.createElement("span");
+              addSpan1.innerHTML='<button>올리브영</button>';
+              const addSpan2 =document.createElement("span");
+              addSpan2.innerHTML='<button>만화방</button>';
+              body.prepend(addSpan);
+              body.prepend(addSpan1);
+              body.prepend(addSpan2);
+    
+            }
+            else{
+              console.log(gender)
+              const addSpan =document.createElement("span");
+              addSpan.innerHTML='<button>책방</button>';
+              const addSpan1 =document.createElement("span");
+              addSpan1.innerHTML='<button>코노</button>';
+              const addSpan2 =document.createElement("span");
+              addSpan2.innerHTML='<button>보드게임</button>';
+              body.append(addSpan);
+              body.append(addSpan1);
+              body.append(addSpan2);
+    
+            }
+    
+
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            keyword.value=input.value+" 놀거리";
+            const search=document.getElementById("keywordsearch");
+            search.click();
+
+        }
+    </script>
+    <script>
 
         $(function () {	//화면 로딩후 시작
             $("#myInput").autocomplete({  //오토 컴플릿트 시작
@@ -55,8 +137,55 @@
             });
         });
 
-    
-        </script>
+    </script>
+    <script src="/javascript/map.js"></script>
+    <script>
+      const gender=$('input[name=gender]:checked').val(); 
+      const gendersubmit=document.getElementById("genderchoose");
+      const body=document.querySelector(".choosegame");
+      gendersubmit.addEventListener("click",function(){
+        while(body.hasChildNodes()){
+          body.removeChild(body.firstChild);
+        }//클릭시 기존 항목들 다 지우기
+        if(gender=="boys"){
+          const addSpan =document.createElement("span");
+          addSpan.innerHTML='<button>당구장</button>';
+          const addSpan1 =document.createElement("span");
+          addSpan1.innerHTML='<button>PC방</button>';
+          const addSpan2 =document.createElement("span");
+          addSpan2.innerHTML='<button>노래방</button>';
+          body.prepend(addSpan);
+          body.prepend(addSpan1);
+          body.prepend(addSpan2);
+
+        }
+        else if(gender=="girls"){
+          const addSpan =document.createElement("span");
+          addSpan.innerHTML='<button>이니스프리</button>';
+          const addSpan1 =document.createElement("span");
+          addSpan1.innerHTML='<button>올리브영</button>';
+          const addSpan2 =document.createElement("span");
+          addSpan2.innerHTML='<button>만화방</button>';
+          body.prepend(addSpan);
+          body.prepend(addSpan1);
+          body.prepend(addSpan2);
+
+        }
+        else if(gender=="couple"){
+          const addSpan =document.createElement("span");
+          addSpan.innerHTML='<button>책방</button>';
+          const addSpan1 =document.createElement("span");
+          addSpan1.innerHTML='<button>코노</button>';
+          const addSpan2 =document.createElement("span");
+          addSpan2.innerHTML='<button>보드게임</button>';
+          body.prepend(addSpan);
+          body.prepend(addSpan1);
+          body.prepend(addSpan2);
+
+        }
+
+      })
+  </script>
 
       
 </body>

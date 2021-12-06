@@ -6,14 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link> 
     <script src="/jquery/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script> -->
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
 
     <script src="/bootstraps/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/find.css">
+    <link rel="stylesheet" type="text/css" href="/css/map.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/top_picture.css"/>
 
     <link rel="stylesheet" type="text/css" href="/bootstraps/css/bootstrap.min.css"/>
     <script src="/javascript/search.js"></script>
-    <title>Alchoal date</title>
+    <script src="../routes/Theme/foodtravel.js"></script>
+
+
+    <title>Drinking all night~</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -22,14 +28,59 @@
             <a href="/" type="button" class="btn btn-info">before</a>
         </div>
     </nav>
-    <form class="input-group">
-        <input type="text" id="myInput"  class="form-control" placeholder="오늘의 목적지를 입력하세요">
+    <form class="input-group" method="post" action="/foodtravel">
+        <input type="text" id="myInput"  class="form-control" placeholder="오늘의 목적지를 입력하세요!" name='user_place'>
         <span class="input-group-btn">
-          <button class="btn btn-secondary" type="button">찾기</button>
+          <button class="btn btn-secondary" onclick="fill()" type="submit">찾기</button>
         </span>
-      </form>
+      </form>      
 
-      <script>
+      <div class="top-picture">
+        <div class="letter">
+            <span> 상위 3개 관련 사진 =>> </span>
+        </div>   
+        <div class="top_pic">
+            <span>list 1</span>
+            <img src="/images/food/0.jpg" width="300px" height="190px">
+        </div>
+        <div class="top_pic">
+            <span>list 2</span>
+            <img src="/images/food/1.jpg" width="300px" height="190px">
+        </div>
+        <div class="top_pic">
+            <span>list 3</span>
+            <img src="/images/food/2.jpg" width="300px" height="190px">
+        </div>
+
+      <div class="map_wrap">
+        <div id="map" style="width:100%;height:100%;"></div>
+    
+        <div id="menu_wrap" class="bg_white">
+            <div class="option">
+                <div>
+                    <form onsubmit="searchPlaces(); return false;">
+                        키워드 : <input type="text" value="술집" id="keyword" size="15"> 
+                        <button id="keywordsearch" type="submit">검색하기</button> 
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <ul id="placesList"></ul>
+            <div id="pagination"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=23f90b23f8f678caad181fbb316393fc&libraries=services,clusterer"></script>
+    <script>
+        function fill(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            keyword.value=input.value+" 술집";
+            const search=document.getElementById("keywordsearch");
+            search.click();
+
+        }
+    </script>
+    <script>
 
         $(function () {	//화면 로딩후 시작
             $("#myInput").autocomplete({  //오토 컴플릿트 시작
@@ -42,8 +93,12 @@
                 position:{my :'right top', at:'right bottom'}
             });
         });
- 
-        </script>
+
+    </script>
+    <script src="/javascript/map.js"></script>
+
+
+
 
       
 </body>
