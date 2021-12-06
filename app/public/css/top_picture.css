@@ -1,0 +1,25 @@
+.top_pic{
+    display: inline;
+    margin-left: 60px;
+}
+.top_pic span{
+    font-weight: bold;
+    font-size: large;
+    border-radius: 10px;
+    border: 2px solid orange;
+    padding: 0px 10px;
+    position: relative;
+    top: 60px;
+}
+.letter{
+    display: inline;    
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 4px solid black;
+    font-size: large;
+    padding: 0px 10px;
+    background-color: darksalmon;
+}
+.top-picture{
+
+}
