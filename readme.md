@@ -34,9 +34,9 @@ Backend
 
 ### Prerequisites
 
-- Get a KAKAO API KEY In kakao Developer ([kakao developer](https://developers.kakao.com/))
+- Get a KAKAO API KEY In kakao Developer ([kakao developer](https://developers.kakao.com/))<br/>
     You can get 'Client ID' and 'Client Secret' from kakao.
-- Get your own Mongo_URI in Mongo Atlas.([Mongo Atlas] (https://www.mongodb.com/atlas/database))
+- Get your own Mongo_URI in Mongo Atlas.([Mongo Atlas] (https://www.mongodb.com/atlas/database))<br/>
     Else you can run in your local DB.
     
 
