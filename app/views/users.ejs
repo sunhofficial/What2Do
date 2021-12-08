@@ -14,21 +14,27 @@
     <link rel="stylesheet" type="text/css" href="/bootstraps/css/bootstrap.min.css"/>
     <!-- <script src="../routes/auth.js"></script> -->
     <style>
-      body{
-        background-color: beige;    
-        background-image: url("/images/what2doimg.jpg");
-        background-repeat: repeat-x;
-        background-position: 0% -270%;
+    @font-face {
+        font-family: 'KOTRAHOPE';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+      *{
+        font-family: 'KOTRAHOPE';
+        font-size: 30px;
+        text-align: center;
+        background-image: url('/images/background.jpg');
       }
-            
+                
         .hide{
-            display: none;
-
+          display: none;
         }
+
         #start{
-            font-size: 50px;
+            font-size: 100px;
             height: 250px;
-            width: 50%;
+            width: 40%;
 
             border-radius: 5%;
 
@@ -38,7 +44,7 @@
         .hero-btn{
           background-color: red;
           border: none;
-          opacity: 0.8;
+          opacity: 0.9;
         }
         .hero-btn:hover {
           will-change: transform;
@@ -61,6 +67,78 @@
           }
       }
 
+        h1 {
+          margin: 50px 0 15px;
+        }
+        .hero-area-inner{
+          display: flex;
+          justify-content: center;
+          
+          text-align: center;
+          margin: auto;
+        }
+        
+        .icon-box img{
+          height: 200px;
+          width: 150px;
+          display: block;
+        }
+
+        .page-header h1{
+          align-content: center;
+        }
+        .col-lg-9{
+          position: absolute;
+          bottom: 50%;
+          left: 10%;        
+          
+        }
+
+        .first-screen{
+          display: block;
+          justify-content: center;
+          position: absolute;
+          top: 160px;
+          width: 100%;
+          font-size: 50px;
+        }
+
+        .form-wrap{
+          display: block;
+          width: 1350px;
+          height: 500px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          background: rgb(228,227,222, 0.6);
+          margin: auto;
+          padding: 20px;
+          overflow: hidden;
+          text-align: center;
+        }
+
+        .container-fluid{
+          position: relative;
+          top: 10%;
+        }  
+        
+        .out{
+          display: flex;
+          justify-content: right;
+        }
+        .map{
+          display: flex;
+          justify-content: left;
+          position: relative;
+
+        }
+        .sub{
+          display: flex;
+          position: absolute;
+          top: 80%;
+        }
+
         .btn-info a{
           color: #010b0c;
           font-size: 20px;
@@ -73,143 +151,91 @@
           position: relative;
           left: 680px;
         }
-        .out{
-          text-align: center;
-        }
 
-        h1 {
-          margin: 0 0 15px;
-        }
-        .hero-area-inner{
-          display: flex;
-          justify-content: center;
-          
-          text-align: center;
-          margin: auto;
-        }
-        .icon-box img{
-          height: 200px;
-          width: 150px;
-          display: block;
-        }
-        .page-header h1{
-          align-content: center;
-        }
-        .col-lg-9{
-          position: absolute;
-          bottom: 50%;
-          left: 10%;        
-          
-        }
-
-        .col-lg-9 h1{          
-          position: relative;
-          top: 100px;
-          border-bottom: 12px solid #327a9b; 
-          padding: 0 0 0 0.2em;
-          background-image: url(/images/what2doimg.jpg);
-          background-size: cover;
-        }
-        .first-screen{
-          display: block;
-          justify-content: center;
-          position: relative;
-          top: 150px;
-        }
-        .container-fluid{
-          position: relative;
-          top: 150px;
-        }  
         
-        .out{
-          display: flex;
-          justify-content: right;
-        }
-        .map{
-          display: flex;
-          justify-content: left;
-          position: relative;
-          top: 50px;
-        }
-        .sub{
-          display: inline;
-        }
         .col-md-4 a{
           color: black;
+          font-size: 35px;
         }
 
     </style>
 </head>
 <body>
+  <!-- 두근두근 PAGE -->
     <div class="hero-area-inner">
-      <div class="col-lg-9">
-        <!-- <h1>↓↓ 오늘 뭐할지 모르겠다면 클릭 ↓↓</h1> -->
-        <div class="first-screen">          
-       <button type="button" id="start" class="hero-btn">??오늘 뭐하지??</button>
-        </div>
-        
-    <div class="container hide">
-      <div class="page-header"><h1 style="color: cadetblue;">THEME</h1></div>
-      <div class="container-fluid">
 
-          <div class="row gy-4 mt-5 justify-content-center" >
+        <span class="first-screen">          
+          <button type="button" id="start" class="hero-btn">??오늘 뭐하지??</button>
+        </span>
+      </div>
+   
+   
+    <!-- THEME SELCET PAGE    -->
+    <div class="container hide">
+
+        <div class="page-header">
+          <h1>T H E M E</h1>
+        </div>
+
+        <div class= "form-wrap">
+          <div class="container-fluid" >
+            <div class="row gy-4 mt-5 justify-content-center" >
+
               <div class="col-xl-2 col-md-4">
                 <div class="icon-box">
                   <i class="ri-store-line"></i>
-                  
                   <h3><a href="/foodtravel"><img src="/images/food2.png">Food</a></h3>
                 </div>
               </div>
+
               <div class="col-xl-2 col-md-4">
                 <div class="icon-box">
                   <i class="ri-bar-chart-box-line"></i>
-                  
                   <h3><a href="/shopping"><img src="/images/shopping2.png">Shopping</a></h3>
                 </div>
               </div>
+
               <div class="col-xl-2 col-md-4">
                 <div class="icon-box">
                   <i class="ri-calendar-todo-line"></i> 
                   <h3><a href="/healing"><img src="/images/healing2.png">Healing</a></h3>
                 </div>
               </div>
+
               <div class="col-xl-2 col-md-4">
                 <div class="icon-box">
                   <i class="ri-paint-brush-line"></i>
                   <h3><a href="/playing"><img src="/images/playing2.png">Play</a></h3>
                 </div>
               </div>
+
               <div class="col-xl-2 col-md-4">
                 <div class="icon-box">
                   <i class="ri-database-2-line"></i>
-                  
                   <h3><a href="/alchoal"><img src="/images/alcohol2.png">Alcohol</a></h3>
                 </div>
               </div>
+
               <div class="col-xl-2 col-md-4">
                   <div class="icon-box">
                     <i class="ri-database-2-line"></i>
-                   
                     <h3><a href="/culture"> <img src="/images/culture2.png">Culture</a></h3>
                   </div>
-                </div>
-            </div>
+              </div>
+
+          </div>
+
+        </div>
+      </div>
             <div class="sub">
               <div class="map">
-                <button type="button" class="btn btn-info"><a href="/map">이미 나는 가고 싶은 곳이 있다</a></button>
-                <div class="out">
-                  <button type = "button" class = "btn btn-danger"><a href = "/auth/logout">LOGOUT</a> </button>
-                </div>
-            </div>
-            
-  </div>   
+                <button type="button" class="btn btn-info" style="border-width: thick;"><a href="/map">이미 나는 가고 싶은 곳이 있다</a></button>
+              </div>
+              <div class="out">
+                <button type = "button" class = "btn btn-danger" style="border-width: thick;"><a href = "/auth/logout">LOGOUT</a> </button>
+              </div>
+            </div>   
   </div>
-        </div>
-        </div>
-
-        
-
-
 
 </body>
 <script>
