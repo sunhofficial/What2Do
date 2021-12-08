@@ -1,6 +1,7 @@
 ## What 2 DO(W2D.)
 
 > > ### **_"COVID-19가 유행한지 어느새 2년..."_**
+<img src="/uploads/a6eb980030041709cca6b70140b0e422/button__1_.png" width="500" height="300" >
 
 ## Description
 ----------
@@ -69,7 +70,7 @@ Backend
 3. 원하는 테마 선택
 ![theme](/uploads/7a1f6421e0f7d56fcae17f247b707f54/theme.png)
 4. 원하는 목적지 입력
-![dud](/uploads/56e6427d75b2a23a3fa4a21423db1f2f/dud.png)
+![image](/uploads/40c445dcb0f0814c675c77a12dc39cd2/image.png)
 5. 정하지 못하였을 경우 각 테마에 따른 항목 중 고르기 버튼
 ![food](/uploads/f6310ad339847b86cb58e5570e73ed81/food.png)
 
