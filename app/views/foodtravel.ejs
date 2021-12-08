@@ -35,6 +35,18 @@
           <button class="btn btn-secondary" onclick="fill()" type="submit">찾기</button>
         </span>
       </div>      
+
+      <div class="button_set">
+        <button id="bt1" type="button" class="theme_btn btn-outline-primary"  >치킨</button>
+        <button id="bt2" type="button" class="theme_btn btn-outline-secondary">피자</button>
+        <button id="bt3" type="button" class="theme_btn btn-outline-success">한식</button>
+        <button id="bt4" type="button" class="theme_btn btn-outline-info"  >중식</button>
+        <button id="bt5" type="button" class="theme_btn btn-outline-danger">일식</button>
+        <button id="bt6" type="button" class="theme_btn btn-outline-dark">양식</button>
+    
+      </div>
+
+
       <div class="map_wrap">
         <div id="map" style="width:100%;height:100%;"></div>
     
@@ -58,27 +70,58 @@
             const keyword=document.getElementById("keyword");
             const input=document.getElementById("myInput");
             const here=document.querySelector('.herepic');
-            keyword.value=input.value+" 맛집";
+            keyword.value=input.value+" 치킨";
+            const search=document.getElementById("keywordsearch");
+            search.click();            
+        }
+        document.getElementById("bt1").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt1");
+            keyword.value=input.value+` ${doing.innerText}`;
             const search=document.getElementById("keywordsearch");
             search.click();
-            setTimeout(function(){
-                here.innerHTML= `
-                <div class="top_pic">
-                    <span>list 1</span>
-                    <img src="/images/food/0.jpg" width="300px" height="190px">
-                </div>
-                <div class="top_pic">
-                    <span>list 2</span>
-                    <img src="/images/food/1.jpg" width="300px" height="190px">
-                </div>
-                <div class="top_pic">
-                    <span>list 3</span>
-                    <img src="/images/food/2.jpg" width="300px" height="190px">
-                </div>
-                `;
-                console.log(here);
-            },5000000)
         }
+        document.getElementById("bt2").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt2");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
+        }
+        document.getElementById("bt3").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt3");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
+        }
+        document.getElementById("bt4").onclick=function(){
+          const keyword=document.getElementById("keyword");
+          const input=document.getElementById("myInput");
+          const doing=document.getElementById("bt4");
+          keyword.value=input.value+` ${doing.innerText}`;
+          const search=document.getElementById("keywordsearch");
+          search.click();
+      }
+      document.getElementById("bt5").onclick=function(){
+          const keyword=document.getElementById("keyword");
+          const input=document.getElementById("myInput");
+          const doing=document.getElementById("bt5");
+          keyword.value=input.value+` ${doing.innerText}`;
+          const search=document.getElementById("keywordsearch");
+          search.click();
+      }
+      document.getElementById("bt6").onclick=function(){
+        const keyword=document.getElementById("keyword");
+        const input=document.getElementById("myInput");
+        const doing=document.getElementById("bt6");
+        keyword.value=input.value+` ${doing.innerText}`;
+        const search=document.getElementById("keywordsearch");
+        search.click();
+    }
     </script>
     <script>
 

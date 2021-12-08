@@ -32,7 +32,18 @@
         <span class="input-group-btn">
           <button class="btn btn-secondary" onclick="fill()" type="button">찾기</button>
         </span>
-      </div>      
+      </div>   
+      
+      <div class="button_set">
+        <button id="bt1" type="button" class="theme_btn btn-outline-primary"  >옷가게</button>
+        <button id="bt2" type="button" class="theme_btn btn-outline-secondary">신발</button>
+        <button id="bt3" type="button" class="theme_btn btn-outline-success">악세사리</button>
+        <button id="bt4" type="button" class="theme_btn btn-outline-info"  >시계</button>
+        <button id="bt5" type="button" class="theme_btn btn-outline-danger">가방</button>
+        
+    
+      </div>
+
       <div class="map_wrap">
         <div id="map" style="width:100%;height:100%;"></div>
     
@@ -58,8 +69,48 @@
             keyword.value=input.value+" 옷가게";
             const search=document.getElementById("keywordsearch");
             search.click();
-
         }
+        document.getElementById("bt1").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt1");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
+        }
+        document.getElementById("bt2").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt2");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
+        }
+        document.getElementById("bt3").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt3");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
+        }
+        document.getElementById("bt4").onclick=function(){
+          const keyword=document.getElementById("keyword");
+          const input=document.getElementById("myInput");
+          const doing=document.getElementById("bt4");
+          keyword.value=input.value+` ${doing.innerText}`;
+          const search=document.getElementById("keywordsearch");
+          search.click();
+      }
+      document.getElementById("bt5").onclick=function(){
+        const keyword=document.getElementById("keyword");
+        const input=document.getElementById("myInput");
+        const doing=document.getElementById("bt5");
+        keyword.value=input.value+` ${doing.innerText}`;
+        const search=document.getElementById("keywordsearch");
+        search.click();
+    }
+      
     </script>
     <script>
 
