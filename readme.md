@@ -34,7 +34,11 @@ Backend
 
 ### Prerequisites
 
-- Get a KAKAO API KEY In kakao Developer ([kakao developer](https://developers.kakao.com/))
+- Get a KAKAO API KEY In kakao Developer ([kakao developer](https://developers.kakao.com/))\
+-   You can get 'Client ID' and 'Client Secret' from kakao.
+- Get your own Mongo_URI in Mongo Atlas.([Mongo Atlas] (https://www.mongodb.com/atlas/database))\
+-   Else you can run in your local DB.
+    
 
 
 ### Installation
@@ -106,5 +110,5 @@ Backend
 
 > - 김재웅 (kju2405@khu.ac.kr)
 > - 이선호 (sunh803@khu.ac.kr)
-> - 최은지 (ejalice123@gmail.com)
+> - 최은지 (ejalice123@khu.ac.kr)
 
