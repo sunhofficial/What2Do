@@ -3,21 +3,30 @@
 > > ### **_"COVID-19가 유행한지 어느새 2년..."_**
 
 ## Description
+----------
 
 우리는 거리두기로 인해 밖에 나가는 것을 잃었고 방구석 인생을 살았을 것이다.
+
 하지만 **_봄은_** 찾아온다. 리오프닝을 점차 시작하는 상황에서 새내기는 물론이고 우리는 매 순간 어디로 가서 뭐하고 놀지 고민한다.
+
+
 _그래서 이를 해결하기 위해 테마, 장소 그리고 무려 그에 따른 리스트까지 추천해주는 기능을 만들었다._
+
+
 
 ### Built With
 
+Frontend
+- ejs
+- BootStrap
+- JQuery
+
+Backend
 - Node.js
 - Express.js
-- BootStrap
-- fontAwesome
-- python
 - MongoDB
-- JQuery
 - Kakao API
+- AWS(EC2 Linux)
 
 ## Getting Started(Installation)
 
@@ -26,27 +35,33 @@ _그래서 이를 해결하기 위해 테마, 장소 그리고 무려 그에 따
 ### Prerequisites
 
 - Get a KAKAO API KEY In kakao Developer ([kakao developer](https://developers.kakao.com/))
--
+
 
 ### Installation
 
-1. git clone
-   설치하고자 하는 폴더에 들어가서 git bash 터미널 창에서 실행시켜준다.
-   > git clone http://khuhub.khu.ac.kr/What2Do/What2Do.git
-2. NPM INSTALL
-   필요한 모듈들을 설치해준다. >npm install
-3. Install Mongodb
+    1. 설치하고자 하는 폴더에 들어가서 git bash 터미널 창에서 실행시켜준다.
+ > git clone http://khuhub.khu.ac.kr/What2Do/What2Do.git
+ 
+    2. 필요한 모듈들을 설치해준다.
 
-4. API KEY 적용
-   kakaoapkey.js에 본인의 kakao developer javascript api key를 입력해준다.
+>           $ npm install
 
+
+    4. API KEY 적용
+
+       kakaoapkey.js appkey="본인의 kakao developer javascript api key"
+    5. 실행
+        
+>       $ npm run start
+       
 ## Usage
 
 1. 로그인 혹은 회원가입
 2. 원하는 목적지가 있으면 map을 누르고 없으면 오늘 뭐하지 버튼 클릭
 3. 원하는 테마 선택
 4. 원하는 목적지 입력
-5. 그에 따른 인기 top3 사진출력과 리스트들과 위치 찾기
+5. 정하지 못하였을 경우 각 테마에 따른 항목 중 고르기 버튼
+
 
 ## RoadMap
 
@@ -59,7 +74,7 @@ _그래서 이를 해결하기 위해 테마, 장소 그리고 무려 그에 따
 - 카카오 맵 연동 구현
 - 위치 검색 자동완성 구현
 - 위치 검색과 카카오 맵 연동
-- 위치 검색어를 가지고 파이썬 크롤링을 통해 이미지 배너 생성
+- 테마별 키워드 추천 및 맵 연동
 
 ## Contributing
 
@@ -67,8 +82,8 @@ _그래서 이를 해결하기 위해 테마, 장소 그리고 무려 그에 따
 > 그래서 다양한 기능들의 추가는 모두에게 열려있습니다.
 > Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+    If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+    Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
 2. Create your Feature Branch
@@ -78,11 +93,11 @@ Don't forget to give the project a star! Thanks again!
 
 ## License(API)
 
--
-- Kakao API 맵, Kakao API 로그인
+- Licensed under the [MIT LIcense](LICENSE).
 
 ## Contact
 
 > - 김재웅 (kju2405@khu.ac.kr)
 > - 이선호 (sunh803@khu.ac.kr)
 > - 최은지 (ejalice123@gmail.com)
+

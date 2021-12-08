@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/map", (req, res) => {
-  res.render("map");
+  res.render("map"), { appkey: appkey };
 });
 
 router.get("/alchoal", (req, res) => {
