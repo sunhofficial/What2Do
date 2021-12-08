@@ -38,7 +38,7 @@ _그래서 이를 해결하기 위해 테마, 장소 그리고 무려 그에 따
 3. Install Mongodb
 
 4. API KEY 적용
-   process.env 파일안에 받아온 카카오 api key를 입력해준다.
+   kakaoapkey.js에 본인의 kakao developer javascript api key를 입력해준다.
 
 ## Usage
 

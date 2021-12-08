@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const key = require("../../kakaoapkey");
 router.get("/", (req, res) => {
   /**
    * req.user가 있는 경우는 소셜 로그인에 성공한 경우
@@ -19,21 +19,23 @@ router.get("/map", (req, res) => {
 });
 
 router.get("/alchoal", (req, res) => {
-  res.render("alchoal");
+  res.render("alchoal", { appkey: appkey });
 });
-
+router.get("/foodtravel", (req, res) => {
+  res.render("foodtravel", { appkey: appkey });
+});
 router.get("/healing", (req, res) => {
-  res.render("healing");
+  res.render("healing", { appkey: appkey });
 });
 router.get("/shopping", (req, res) => {
-  res.render("shopping");
+  res.render("shopping", { appkey: appkey });
 });
 router.get("/playing", (req, res) => {
-  res.render("playing");
+  res.render("playing", { appkey: appkey });
 });
 
 router.get("/culture", (req, res) => {
-  res.render("culture");
+  res.render("culture", { appkey: appkey });
 });
 
 router.get("/login", (req, res) => {

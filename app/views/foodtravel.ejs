@@ -16,7 +16,8 @@
 
     <link rel="stylesheet" type="text/css" href="/bootstraps/css/bootstrap.min.css"/>
     <script src="/javascript/search.js"></script>
-    <script src="../routes/Theme/foodtravel.js"></script>
+
+    <script src="../../kakaoapkey.js"></script>
 
 
     <title>FoodFight</title>
@@ -34,14 +35,6 @@
           <button class="btn btn-secondary" onclick="fill()" type="submit">찾기</button>
         </span>
       </div>      
-
-      <div class="top-picture">
-        <div class="letter">
-            <span> 상위 3개 관련 사진 =>> </span>
-        </div>
-        <div class="herepic"></div>   
-       
-
       <div class="map_wrap">
         <div id="map" style="width:100%;height:100%;"></div>
     
@@ -59,7 +52,7 @@
             <div id="pagination"></div>
         </div>
     </div>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=23f90b23f8f678caad181fbb316393fc&libraries=services,clusterer"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=<%=appkey%>&libraries=services,clusterer"></script>
     <script>
         function fill(){
             const keyword=document.getElementById("keyword");

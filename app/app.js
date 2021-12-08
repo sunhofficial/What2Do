@@ -10,9 +10,9 @@ const authRouter = require("./routes/auth");
 const indexRouter = require("./routes/index");
 const loginRouter = require("./routes/login");
 const signupRouter = require("./routes/signup");
-const foodtravelRouter = require("./routes/Theme/foodtravel");
+
 const app = express();
-dotenv.config({path: 'process.env'});
+dotenv.config({ path: "process.env" });
 
 mongoose.Promise = global.Promise;
 mongoose
@@ -45,7 +45,5 @@ app.use("/", indexRouter);
 app.use("/auth", authRouter);
 app.use("/login", loginRouter);
 app.use("/signup", signupRouter);
-
-app.use("/foodtravel", foodtravelRouter);
 
 module.exports = app;

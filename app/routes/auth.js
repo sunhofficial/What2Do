@@ -2,7 +2,7 @@ const express = require("express");
 const passport = require("passport");
 const cookieParser = require("cookie-parser");
 const router = express.Router();
-const passportnaver = require("../config/naverlogin");
+
 const passportkakao = require("../config/kakaologin");
 const User = require("../model/user");
 
@@ -22,19 +22,20 @@ router.get(
   "/login/kakao/callback",
   passport.authenticate("kakao", { failureRedirect: "/" }),
   function (req, res) {
+    req.session.islogined = true;
     console.log("successlogin");
     res.render("users");
   }
 );
-router.get("/login/naver", passportnaver.authenticate("naver"));
-router.get(
-  "/login/naver/callback",
-  passportnaver.authenticate("naver", { failureRedirect: "/auth/login" }),
-  (req, res) => {
-    console.log("callback naver");
-    res.render("users");
-  }
-);
+// router.get("/login/naver", passportnaver.authenticate("naver"));
+// router.get(
+//   "/login/naver/callback",
+//   passportnaver.authenticate("naver", { failureRedirect: "/auth/login" }),
+//   (req, res) => {
+//     console.log("callback naver");
+//     res.render("users");
+//   }
+// );
 router.get("/logout", (req, res) => {
   console.log("logoutsession", req.session.islogined);
   if (req.session.islogined) {

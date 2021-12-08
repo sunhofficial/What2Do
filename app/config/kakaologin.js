@@ -1,11 +1,13 @@
 const passport = require("passport");
 const KakaoStrategy = require("passport-kakao").Strategy;
 const User = require("../model/user");
+const dotenv = require("dotenv");
+dotenv.config({ path: "process.env" });
 passport.use(
   new KakaoStrategy(
     {
-      clientID: "5b5b58098ed54b269acbbd8758bd1a73",
-      clientSecret: "g98pZbUKayCDjS2skZTcXei0HmM5qtAf",
+      clientID: process.env.Clientid,
+      clientSecret: process.env.ClientSecret,
       callbackURL: "/auth/login/kakao/callback",
     },
     function (accessToken, refreshToken, profile, done) {
