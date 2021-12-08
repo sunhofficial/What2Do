@@ -34,7 +34,9 @@
           <button class="btn btn-secondary" onclick="fill()" type="submit">찾기</button>
         </span>
     </div>      
-
+    <button id="bt1" type="button" class="btn btn-outline-primary" >궁궐</button>
+    <button id="bt2" type="button" class="btn btn-outline-secondary">박물관</button>
+    <button id="bt3" type="button" class="btn btn-outline-success">유적지</button>
 
       <div class="map_wrap">
         <div id="map" style="width:100%;height:100%;"></div>
@@ -62,6 +64,29 @@
             const search=document.getElementById("keywordsearch");
             search.click();
 
+        }        document.getElementById("bt1").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt1");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
+        }
+        document.getElementById("bt2").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt2");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
+        }
+        document.getElementById("bt3").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt3");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
         }
     </script>
     <script>

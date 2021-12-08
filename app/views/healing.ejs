@@ -28,30 +28,19 @@
             <a href="/" type="button" class="btn btn-info">before</a>
         </div>
     </nav>
-    <form class="input-group" method="post" action="/foodtravel">
+    <div class="input-group">
         <input type="text" id="myInput"  class="form-control" placeholder="오늘의 목적지를 입력하세요!" name='user_place'>
         <span class="input-group-btn">
           <button class="btn btn-secondary" onclick="fill()" type="submit">찾기</button>
         </span>
-      </form>      
-
-      <div class="top-picture">
-        <div class="letter">
-            <span> 상위 3개 관련 사진 =>> </span>
-        </div>   
-        <div class="top_pic">
-            <span>list 1</span>
-            <img src="/images/food/0.jpg" width="300px" height="190px">
-        </div>
-        <div class="top_pic">
-            <span>list 2</span>
-            <img src="/images/food/1.jpg" width="300px" height="190px">
-        </div>
-        <div class="top_pic">
-            <span>list 3</span>
-            <img src="/images/food/2.jpg" width="300px" height="190px">
-        </div>
-
+      </div>
+      <button id="bt1" type="button" class="btn btn-outline-primary" value="책방" >책방</button>
+    <button id="bt2" type="button" class="btn btn-outline-secondary">마사지</button>
+    <button id="bt3" type="button" class="btn btn-outline-success">공원</button>
+    <button id="bt4" type="button" class="btn btn-outline-info"  >미술관</button>
+    <button id="bt5" type="button" class="btn btn-outline-danger">전시회</button>
+    <button id="bt6" type="button" class="btn btn-outline-dark">카페</button>
+   
       <div class="map_wrap">
         <div id="map" style="width:100%;height:100%;"></div>
     
@@ -74,10 +63,57 @@
         function fill(){
             const keyword=document.getElementById("keyword");
             const input=document.getElementById("myInput");
-            keyword.value=input.value+" 책방";
+            keyword.value=input.value+" 카페";
             const search=document.getElementById("keywordsearch");
             search.click();
-
+        }
+        document.getElementById("bt1").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt1");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
+        }
+        document.getElementById("bt2").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt2");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
+        }
+        document.getElementById("bt3").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt3");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
+        }
+        document.getElementById("bt4").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt4");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
+        }
+        document.getElementById("bt5").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt5");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
+        }
+        document.getElementById("bt6").onclick=function(){
+            const keyword=document.getElementById("keyword");
+            const input=document.getElementById("myInput");
+            const doing=document.getElementById("bt6");
+            keyword.value=input.value+` ${doing.innerText}`;
+            const search=document.getElementById("keywordsearch");
+            search.click();
         }
     </script>
     <script>
