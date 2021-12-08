@@ -37,12 +37,12 @@
     </div>      
 
     <div class="button_set">
-        <button id="bt1" type="button" class="theme_btn btn-outline-primary"  >와인</button>
+        <button id="bt1" type="button" class="theme_btn btn-outline-primary"  >술집</button>
         <button id="bt2" type="button" class="theme_btn btn-outline-secondary">칵테일</button>
         <button id="bt3" type="button" class="theme_btn btn-outline-success">펍</button>
         <button id="bt4" type="button" class="theme_btn btn-outline-info"  >막걸리</button>
         <button id="bt5" type="button" class="theme_btn btn-outline-danger">호프</button>
-        <button id="bt6" type="button" class="theme_btn btn-outline-dark">술집</button>
+        <button id="bt6" type="button" class="theme_btn btn-outline-dark">와인</button>
     
       </div>
 
@@ -70,7 +70,7 @@
         function fill(){
             const keyword=document.getElementById("keyword");
             const input=document.getElementById("myInput");
-            keyword.value=input.value+" 와인";
+            keyword.value=input.value+" 술집";
             const search=document.getElementById("keywordsearch");
             search.click();
         }
@@ -114,6 +114,14 @@
           const search=document.getElementById("keywordsearch");
           search.click();
       }
+      document.getElementById("bt6").onclick=function(){
+        const keyword=document.getElementById("keyword");
+        const input=document.getElementById("myInput");
+        const doing=document.getElementById("bt6");
+        keyword.value=input.value+` ${doing.innerText}`;
+        const search=document.getElementById("keywordsearch");
+        search.click();
+    }
     </script>
     <script>
 

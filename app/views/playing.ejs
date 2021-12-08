@@ -38,10 +38,11 @@
   <div class="button_set">
     <button id="bt1" type="button" class="theme_btn btn-outline-primary"  >PC방</button>
     <button id="bt2" type="button" class="theme_btn btn-outline-secondary">당구장</button>
-    <button id="bt3" type="button" class="theme_btn btn-outline-success">탁구장</button>
-    <button id="bt4" type="button" class="theme_btn btn-outline-info"  >만화카페</button>
+    <button id="bt3" type="button" class="theme_btn btn-outline-success">영화관</button>
+    <button id="bt4" type="button" class="theme_btn btn-outline-info"  >노래방</button>
     <button id="bt5" type="button" class="theme_btn btn-outline-danger">방탈출</button>
     <button id="bt6" type="button" class="theme_btn btn-outline-dark">보드게임</button>
+    
 
   </div>
   
@@ -68,7 +69,7 @@
   
             const keyword=document.getElementById("keyword");
             const input=document.getElementById("myInput");
-            keyword.value=input.value+" 게임";
+            keyword.value=input.value+" 노래방";
             const search=document.getElementById("keywordsearch");
             search.click();
 
@@ -117,6 +118,14 @@
         const keyword=document.getElementById("keyword");
         const input=document.getElementById("myInput");
         const doing=document.getElementById("bt6");
+        keyword.value=input.value+` ${doing.innerText}`;
+        const search=document.getElementById("keywordsearch");
+        search.click();
+    }
+    document.getElementById("bt7").onclick=function(){
+        const keyword=document.getElementById("keyword");
+        const input=document.getElementById("myInput");
+        const doing=document.getElementById("bt7");
         keyword.value=input.value+` ${doing.innerText}`;
         const search=document.getElementById("keywordsearch");
         search.click();
