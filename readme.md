@@ -1,7 +1,7 @@
 ## What 2 DO(W2D.)
 
 > > ### **_"COVID-19가 유행한지 어느새 2년..."_**
-<img src="/uploads/a6eb980030041709cca6b70140b0e422/button__1_.png" width="500" height="300" >
+<img width="497" alt="스크린샷 2022-11-24 오후 9 32 26" src="https://user-images.githubusercontent.com/76695159/203785434-30db33fc-fd76-46d3-a9da-845337b04e46.png">
 
 ## Description
 ----------
@@ -62,17 +62,20 @@ Backend
 ## Usage
 
 1. 로그인 혹은 회원가입
-![login](/uploads/6d6eea6f3c1d31cf869f18236d90a058/login.png)
+<img width="1181" alt="스크린샷 2022-11-24 오후 9 32 58" src="https://user-images.githubusercontent.com/76695159/203785559-bbcecb69-6642-491a-a999-ab3270b4fb64.png">
 
 
 2. 원하는 목적지가 있으면 map을 누르고 없으면 오늘 뭐하지 버튼 클릭 
 ![button__1_](/uploads/a6eb980030041709cca6b70140b0e422/button__1_.png)
 3. 원하는 테마 선택
-![theme](/uploads/7a1f6421e0f7d56fcae17f247b707f54/theme.png)
+<img width="1152" alt="스크린샷 2022-11-24 오후 9 33 58" src="https://user-images.githubusercontent.com/76695159/203785718-ce37f1e8-df3e-435a-b219-1046beda473e.png">
+
 4. 원하는 목적지 입력
-![image](/uploads/40c445dcb0f0814c675c77a12dc39cd2/image.png)
+<img width="1183" alt="스크린샷 2022-11-24 오후 9 34 17" src="https://user-images.githubusercontent.com/76695159/203785773-0559feb4-8a4f-42cd-8a22-a2ff1d8878b6.png">
+
 5. 정하지 못하였을 경우 각 테마에 따른 항목 중 고르기 버튼
-![food](/uploads/f6310ad339847b86cb58e5570e73ed81/food.png)
+<img width="1184" alt="스크린샷 2022-11-24 오후 9 34 30" src="https://user-images.githubusercontent.com/76695159/203785830-02fb1364-3c47-4aa0-9c6a-6fda153ba9b8.png">
+
 
 
 ## RoadMap
